@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2968406618427568534}
   - component: {fileID: 2968406618427568553}
-  - component: {fileID: 7261692282875873042}
+  - component: {fileID: 6317985420099933504}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7261692282875873042
+--- !u!114 &6317985420099933504
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2968406618427568535}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 603947204c5ee964e95380b7453355d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b11b254d41038245bb0821ae6cb7ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotation: {x: 0, y: 0, z: 400}
@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 2968406619051208724}
   - component: {fileID: 2968406619051208725}
   - component: {fileID: 2968406619051208722}
+  - component: {fileID: 5203102347744820083}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -204,3 +205,16 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &5203102347744820083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2968406619051208723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c986714af485c74ea8b4938e563b23e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherPortalTransform: {fileID: 0}

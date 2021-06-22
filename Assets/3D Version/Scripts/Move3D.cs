@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Move3D : MonoBehaviour
 {
+    private GameObject arrowKeys;
     [Header("Movement Settings")]
     //Speed is how quickly the player moves, movementSmoothing is a value passed into the smoothDamp method to calculate how to spread it out over time. I'd keep it at 0.05f, it's a good value.
     public float speed;
@@ -21,12 +22,14 @@ public class Move3D : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        arrowKeys = GameObject.FindGameObjectWithTag("Arrows");
     }
 
     // Update is called once per frame
     void Update()
     {
-        direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+        DetermineDirection();
+        
 
         if (jumpCooldown > 0f)
         {
@@ -54,5 +57,35 @@ public class Move3D : MonoBehaviour
         Vector3 targetVelocity = new Vector3(speed * 10 * direction.x * Time.fixedDeltaTime, rb.velocity.y, speed * 10 * direction.z * Time.fixedDeltaTime);
         //Set the velocity using the SmoothDamp function to ensure a smooth movement experience
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_velocity, movementSmoothing);
+    }
+
+    private void DetermineDirection()
+    {
+        float currentAngle = arrowKeys.GetComponent<ArrowKeyRotate>().GetFrontAngle();
+        if(currentAngle == 0f)
+        {
+            direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+        }
+        else if (currentAngle == 90f)
+        {
+            direction = new Vector3(Input.GetAxisRaw("Vertical"), 0f, -1f * Input.GetAxisRaw("Horizontal"));
+        }
+        else if (currentAngle == 180f)
+        {
+            direction = new Vector3(-1f * Input.GetAxisRaw("Horizontal"), 0f, -1f * Input.GetAxisRaw("Vertical"));
+        }
+        else if (currentAngle == 270)
+        {
+            direction = new Vector3(-1f * Input.GetAxisRaw("Vertical"), 0f, Input.GetAxisRaw("Horizontal"));
+        }
+        RotatePlayer(currentAngle);
+    }
+
+    private void RotatePlayer(float newAngle)
+    {
+        if(transform.localRotation.y != newAngle)
+        {
+            transform.eulerAngles = new Vector3(0f, newAngle - 180f, 0f);
+        }
     }
 }
