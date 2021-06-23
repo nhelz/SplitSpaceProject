@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/TitleScreen.unity
+- path: Assets/3D Version/Scenes/3DEndScreen.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -53,4 +53,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/3D Version/Scenes/3DLevel1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/3D Version/Scenes/3DLevel2.unity
+    guid: 6cc47d08787d6bc498f8b55e9a3cffed
+  - enabled: 1
+    path: Assets/3D Version/Scenes/3DLevel3.unity
+    guid: d83ea9f69c29719478501f974333aba2
+  - enabled: 1
+    path: Assets/3D Version/Scenes/3DLevel4.unity
+    guid: a6a6bcba750170146a65640c18192cf7
+  - enabled: 1
+    path: Assets/3D Version/Scenes/3DEndScreen.unity
+    guid: 82cf054495886b447af727a35a0d75cf
   m_configObjects: {}
